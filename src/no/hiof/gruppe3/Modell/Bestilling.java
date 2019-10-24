@@ -13,7 +13,7 @@ public class Bestilling extends SkrivTilServer {
      */
     public String bestillBillet(int velgAntallBilleter) {
 
-        Bruker testBruker = new Bruker("abc", "def", "123@gmail.com", "drossap", 27);
+        Bruker testBruker = new Bruker("abc", "def","acc" ,"123@gmail.com", "drossap", 27);
 
         if(antallBilletter > 0){
 

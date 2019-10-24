@@ -13,9 +13,10 @@ public class Bruker  {
     private int alder;
     private boolean brukerErKlubb;
 
-    public Bruker(String etternavn, String fornavn, String epost, String passord, int alder){
+    public Bruker(String etternavn, String fornavn, String brukernavn ,String epost, String passord, int alder){
         this.etternavn = etternavn;
         this.fornavn = fornavn;
+        this.brukernavn = brukernavn;
         this.epost = epost;
         this.passord = MD5Hashing(passord);
         this.alder = alder;
