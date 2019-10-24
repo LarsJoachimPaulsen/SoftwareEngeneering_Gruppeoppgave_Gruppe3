@@ -27,7 +27,7 @@ public class Bruker  {
     // produserer en MD5Has av passordet.
     public String MD5Hashing (String passord){
 
-        String passordMedSalt = passord + "t¤0+214";
+        String passordMedSalt = passord + "t0¤+214";
         String md5Passord = null;
         try{
 
