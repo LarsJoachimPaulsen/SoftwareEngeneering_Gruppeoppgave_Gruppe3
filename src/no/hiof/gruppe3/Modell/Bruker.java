@@ -9,26 +9,29 @@ import java.security.NoSuchAlgorithmException;
 // passord må hashes! MD5?
 public class Bruker  {
 
-    private String etternavn, fornavn, epost, passord;
+    private String etternavn, fornavn, epost, passord, brukernavn;
     private int alder;
+    private boolean brukerErKlubb;
 
-    public Bruker(String etternavn, String fornavn, String epost, int alder){
+    public Bruker(String etternavn, String fornavn, String epost, String passord, int alder){
         this.etternavn = etternavn;
         this.fornavn = fornavn;
         this.epost = epost;
+        this.passord = MD5Hashing(passord);
         this.alder = alder;
-
     }
 
     public Bruker(){
 
     }
 
+
     // produserer en MD5Has av passordet.
     public String MD5Hashing (String passord){
 
         String passordMedSalt = passord + "t0¤+214";
         String md5Passord = null;
+
         try{
 
             MessageDigest md = MessageDigest.getInstance("MD5");
