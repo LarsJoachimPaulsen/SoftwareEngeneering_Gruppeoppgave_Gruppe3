@@ -33,7 +33,7 @@ class BestillingTest {
     }
 
     @Test
-    void bestillinger_av_billetter_gir_riktig_pris_test(){
+    void bestillinger_av_et_antall_billetter_gir_riktig_pris_test(){
         assertEquals(200, bestilling.kalkulerPris(1));
         assertEquals(400, bestilling.kalkulerPris(2));
         assertEquals(1000, bestilling.kalkulerPris(5));
