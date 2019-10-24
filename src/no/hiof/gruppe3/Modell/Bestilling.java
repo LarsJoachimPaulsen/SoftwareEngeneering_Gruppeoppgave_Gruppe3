@@ -13,6 +13,8 @@ public class Bestilling extends SkrivTilServer {
      */
     public String bestillBillet(int velgAntallBilleter) {
 
+        Bruker testBruker = new Bruker("abc", "def", "123@gmail.com", "drossap", 27);
+
         if(antallBilletter > 0){
 
             if(velgAntallBilleter > antallBilletter){
@@ -24,13 +26,13 @@ public class Bestilling extends SkrivTilServer {
 
                 kalkulerPris(velgAntallBilleter);
 
-                // kan flyttes til kalkulerPris?
-                boolean godkjentBetaling = sendTilBankAccept(new Bruker("abs", "def", "123@gmail.com" ,27));
+                // !!!!! kan flyttes til kalkulerPris? !!!!!!!!!!!!!!!!!!!!!!!!!!!
+                boolean godkjentBetaling = sendTilBankAccept(testBruker);
                 // sende til betalingsside, returnerer godkjent ikke godkjent
                 if (godkjentBetaling){
 
                     // new Bruker er placeholder.
-                    sendBekreftelse(new Bruker("abs", "def", "123@gmail.com", 27));
+                    sendBekreftelse(testBruker);
 
                     // Send bekreftelse(bruker) <-- sender mail med billett/ evt sms.
 
@@ -38,10 +40,12 @@ public class Bestilling extends SkrivTilServer {
                 }
 
                 else {
+                    // legger billettene tilbake for salg, om bestillingen ikke ble godkjent.
+                    antallBilletter+= antallBilletter;
                     return "Noe gikk galt";
 
                 }
-
+                //  !!!!! kan flyttes til kalkulerPris? !!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
         }
         else{
@@ -53,7 +57,7 @@ public class Bestilling extends SkrivTilServer {
 
     public int kalkulerPris(int antallBilleter) {
 
-        int prisPerBillet = lesFraServer("CVC/billettinformasjon.cvc");
+        int prisPerBillet = Integer.parseInt(lesFraServer("CVC/billettinformasjon.cvc"));
 
         int totalPris = prisPerBillet * antallBilleter;
 
