@@ -1,6 +1,7 @@
 package no.hiof.gruppe3;
 
 import no.hiof.gruppe3.Modell.Bruker;
+import no.hiof.gruppe3.Modell.Innstillinger;
 
 public class Main {
 
@@ -20,5 +21,11 @@ public class Main {
         nyBruker2.setPassord("abcd123");
 
         System.out.println(nyBruker2.getPassord());
+
+        Innstillinger innstillingerForBruker = new Innstillinger();
+
+        innstillingerForBruker.endrePassord(nyBruker, "abcd123", "drossap", "drossap");
+
+        System.out.println(nyBruker.getPassord());
     }
 }
