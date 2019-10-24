@@ -1,10 +1,10 @@
 package no.hiof.gruppe3.Modell;
 
-public class Innstillinger {
+public class Innstillinger extends Bruker {
 
-    public void endrePassord(LagNyBruker bruker, String passord, String nyttPassord, String bekreftNyttPassord){
+    public void endrePassord(Bruker bruker, String passord, String nyttPassord, String bekreftNyttPassord){
 
-        if(passordSjekk(bruker.getPassord(), passord)){
+        if(passordSjekk(bruker.getPassord(), bruker.MD5Hashing(passord))){
 
             if (nyttPassord.equals(bekreftNyttPassord)){
 
@@ -21,7 +21,7 @@ public class Innstillinger {
 
     }
 
-    public void endreEpost (LagNyBruker bruker, String passord, String nyEpost, String bekreftEpost){
+    public void endreEpost (Bruker bruker, String passord, String nyEpost, String bekreftEpost){
 
         if(passordSjekk(bruker.getPassord(), passord)){
 
