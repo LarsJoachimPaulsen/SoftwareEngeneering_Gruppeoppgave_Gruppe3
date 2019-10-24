@@ -24,6 +24,7 @@
             <version>5.6.0-M1</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <plugins>
