@@ -77,4 +77,8 @@ public class Bestilling extends SkrivTilServer {
         return true;
 
     }
+
+    public void setAntallBilletter(int antallBilletter){
+        this.antallBilletter = antallBilletter;
+    }
 }
