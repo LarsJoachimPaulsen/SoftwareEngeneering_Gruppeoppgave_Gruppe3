@@ -6,7 +6,6 @@ package no.hiof.gruppe3.Modell;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-// passord må hashes! MD5?
 public class Bruker  {
 
     private String etternavn, fornavn, epost, passord, brukernavn;
@@ -35,11 +34,11 @@ public class Bruker  {
 
         try{
 
-            MessageDigest md = MessageDigest.getInstance("MD5");
+            MessageDigest brytNedPassord = MessageDigest.getInstance("MD5");
 
-            md.update(passordMedSalt.getBytes());
+            brytNedPassord.update(passordMedSalt.getBytes());
 
-            byte[] bytes = md.digest();
+            byte[] bytes = brytNedPassord.digest();
 
             StringBuilder byggMD5 = new StringBuilder();
 
