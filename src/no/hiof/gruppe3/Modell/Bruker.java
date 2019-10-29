@@ -10,8 +10,10 @@ public class Bruker  {
 
     private String etternavn, fornavn, epost, passord, brukernavn;
     private int alder;
+    private long telefonnummer;
     private boolean brukerErKlubb;
 
+    // telefonnummer må legges inn i konstruktør
     public Bruker(String brukernavn, String fornavn, String etternavn, String epost, String passord, int alder){
         this.etternavn = etternavn;
         this.fornavn = fornavn;
@@ -83,6 +85,11 @@ public class Bruker  {
         return passord;
     }
 
+    public long getTelefonnummer() {
+        return telefonnummer;
+    }
+
+
     public void setEtternavn(String etternavn) {
         this.etternavn = etternavn;
     }
@@ -101,6 +108,10 @@ public class Bruker  {
 
     public void setAlder(int alder) {
         this.alder = alder;
+    }
+
+    public void setTelefonnummer(long telefonnummer) {
+        this.telefonnummer = telefonnummer;
     }
 
     public void setPassord(String passord){
