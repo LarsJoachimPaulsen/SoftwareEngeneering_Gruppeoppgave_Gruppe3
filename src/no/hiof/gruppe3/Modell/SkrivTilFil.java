@@ -3,7 +3,7 @@ package no.hiof.gruppe3.Modell;
 import java.io.*;
 import java.util.ArrayList;
 
-public abstract class SkrivTilServer {
+public abstract class SkrivTilFil {
 
 
     // finne en måte å lage en generell filleser, som kan lese variernde størrelser på filer.

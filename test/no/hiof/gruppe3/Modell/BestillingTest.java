@@ -33,6 +33,13 @@ class BestillingTest {
     }
 
     @Test
+    void grensepunkt_med_billetter_test(){
+        bestilling.setAntallBilletter(2);
+        assertNotEquals("Det er desverre tomt for billetter", bestilling.bestillBillet(1));
+
+    }
+
+    @Test
     void bestillinger_av_et_antall_billetter_gir_riktig_pris_test(){
         assertEquals(200, bestilling.kalkulerPris(1));
         assertEquals(400, bestilling.kalkulerPris(2));

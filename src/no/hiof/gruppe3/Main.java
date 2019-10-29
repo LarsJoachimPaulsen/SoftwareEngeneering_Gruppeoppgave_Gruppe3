@@ -27,5 +27,11 @@ public class Main {
         innstillingerForBruker.endrePassord(nyBruker, "abcd123", "drossap", "drossap");
 
         System.out.println(nyBruker.getPassord());
+
+
+
+
+
+
     }
 }

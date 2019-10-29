@@ -1,6 +1,7 @@
 package no.hiof.gruppe3.Modell;
 
-public class Bestilling extends SkrivTilServer {
+// bytte ut SkrivTilFIl med Arrangement når pris fjernes fra egen fil
+public class Bestilling extends SkrivTilFil {
 
     private long kortnr;
     private short cvc;
@@ -24,10 +25,10 @@ public class Bestilling extends SkrivTilServer {
             else{
                 antallBilletter -= velgAntallBilleter;
 
-                kalkulerPris(velgAntallBilleter);
+               int pris = kalkulerPris(velgAntallBilleter);
 
                 // !!!!! kan flyttes til kalkulerPris? !!!!!!!!!!!!!!!!!!!!!!!!!!!
-                boolean godkjentBetaling = sendTilBankAccept(testBruker);
+                boolean godkjentBetaling = sendTilBankAccept(testBruker, pris);
                 // sende til betalingsside, returnerer godkjent ikke godkjent
                 if (godkjentBetaling){
 
@@ -74,7 +75,7 @@ public class Bestilling extends SkrivTilServer {
         // finne en gratis host vi kan bruke til å sende ut mailer?
     }
 
-    private Boolean sendTilBankAccept(Bruker bruker){
+    private Boolean sendTilBankAccept(Bruker bruker, int pris){
 
         // sender brukeren videre til en sikker bankside. Denne vil returnere true dersom betalingen blir vellykket.
 

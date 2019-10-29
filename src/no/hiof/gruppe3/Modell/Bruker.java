@@ -12,7 +12,7 @@ public class Bruker  {
     private int alder;
     private boolean brukerErKlubb;
 
-    public Bruker(String etternavn, String fornavn, String brukernavn ,String epost, String passord, int alder){
+    public Bruker(String brukernavn, String fornavn, String etternavn, String epost, String passord, int alder){
         this.etternavn = etternavn;
         this.fornavn = fornavn;
         this.brukernavn = brukernavn;
@@ -67,6 +67,10 @@ public class Bruker  {
         return fornavn;
     }
 
+    public String getBrukernavn(){
+        return brukernavn;
+    }
+
     public String getEpost() {
         return epost;
     }
@@ -85,6 +89,10 @@ public class Bruker  {
 
     public void setFornavn(String fornavn) {
         this.fornavn = fornavn;
+    }
+
+    public void setBrukernavn(String brukernavn){
+        this.brukernavn = brukernavn;
     }
 
     public void setEpost(String epost) {
