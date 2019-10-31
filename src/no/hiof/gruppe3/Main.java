@@ -1,7 +1,10 @@
 package no.hiof.gruppe3;
 
+import no.hiof.gruppe3.Modell.Arrangement;
 import no.hiof.gruppe3.Modell.Bruker;
 import no.hiof.gruppe3.Modell.Innstillinger;
+
+import java.time.LocalDate;
 
 public class Main {
 
@@ -29,8 +32,14 @@ public class Main {
         System.out.println(nyBruker.getPassord());
 
 
+        //*************demo************//
 
+        Arrangement arr = new Arrangement("Løping","Fredrikstad", LocalDate.of(2019,11,10),150,200);
 
+        //Arrangement arr1 = new Arrangement("Ski","Fredrikstad", LocalDate.of(2019,10,10),150,200);
+
+        System.out.println(arr);
+        //System.out.println(arr1);
 
 
     }
