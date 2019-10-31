@@ -44,10 +44,10 @@ public class LesFraFil {
 
         }catch (FileNotFoundException f){
             System.out.println("Error: filen finnes ikke objektstrøm til filen");
-        } catch (IOException i) {
-            System.out.println("Error: kan ikke åpne ");
-        } catch (ClassNotFoundException e) {
+        }catch (ClassNotFoundException e) {
             System.out.println("Ingen flere objekter å lese");;
+        }catch (IOException i) {
+        System.out.println("Error: feil på objektstrøm ");
         }
 
 
