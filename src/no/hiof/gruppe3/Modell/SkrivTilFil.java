@@ -3,8 +3,51 @@ package no.hiof.gruppe3.Modell;
 import java.io.*;
 import java.util.ArrayList;
 
-public abstract class SkrivTilFil {
+public class SkrivTilFil {
 
+        private String filSti;
+        private ArrayList<Object> objArrayList;
+
+        public SkrivTilFil(String filSti,ArrayList<Object> objArrayList){
+            this.filSti = filSti;
+            this.objArrayList = objArrayList;
+            skrivTilFila();
+
+        }
+
+        //bruker Serializable til å skrive til forskjellige filer
+        // metoden kan brukes til å skrive bruker i en bruker.ser fil,
+        // og kan også brukes til å skrive arrangementer til arrangementer.ser fil.
+
+        public void skrivTilFila() {
+
+        try {
+            FileOutputStream skrivTilFila = new FileOutputStream(filSti);
+            ObjectOutputStream objOutStream = new ObjectOutputStream(skrivTilFila);
+
+            for(Object o: objArrayList){
+                objOutStream.writeObject(o);
+            }
+
+            objOutStream.close();
+            skrivTilFila.close();
+
+            System.out.println("Data is saved to the file");
+
+        }catch (FileNotFoundException f){
+            System.out.println("Error: filen finnes ikke objektstrøm til filen");
+
+        } catch (IOException i) {
+            System.out.println("Error: kan ikke åpne ");
+        }
+    }
+}
+
+
+
+
+
+/*
 
     // finne en måte å lage en generell filleser, som kan lese variernde størrelser på filer.
     public String lesFraServer(String filsti){
@@ -72,4 +115,4 @@ public abstract class SkrivTilFil {
 
     } */
 
-}
+
