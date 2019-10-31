@@ -34,8 +34,10 @@ public class LesFraFil {
                     Main.getBrukerListe().add( (Bruker) o);
                 else if (o instanceof Arrangement)
                     Main.getArrangementListe().add( (Arrangement) o);
+                else if(o instanceof Klubb)
+                    Main.getKlubbListe().add( (Klubb) o);
                 else
-                    System.out.println("Objektet er verken Bruker eller Arrangement");
+                    System.out.println("Objektet er verken Bruker, Arrangement eller Klubb");
 
             }
 
