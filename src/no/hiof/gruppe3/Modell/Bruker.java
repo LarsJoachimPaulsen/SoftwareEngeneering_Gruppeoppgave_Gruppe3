@@ -5,6 +5,7 @@ package no.hiof.gruppe3.Modell;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 public class Bruker  {
 
@@ -12,6 +13,7 @@ public class Bruker  {
     private int alder;
     private long telefonnummer;
     private boolean brukerErKlubb;
+    private ArrayList<Arrangement> arrangementerBrukerSkalPaa;
 
     // telefonnummer må legges inn i konstruktør
     public Bruker(String brukernavn, String fornavn, String etternavn, String epost, String passord, int alder){
@@ -119,6 +121,13 @@ public class Bruker  {
         this.passord = MD5Hashing(passord);
     }
 
+    public ArrayList<Arrangement> getArrangementerBrukerSkalPaa() {
+        return arrangementerBrukerSkalPaa;
+    }
+
+    public void setArrangementerBrukerSkalPaa(ArrayList<Arrangement> arrangementerBrukerSkalPaa) {
+        this.arrangementerBrukerSkalPaa = arrangementerBrukerSkalPaa;
+    }
 
 }
 
