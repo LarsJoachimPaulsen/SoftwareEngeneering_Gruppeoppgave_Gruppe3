@@ -1,10 +1,11 @@
 package no.hiof.gruppe3.Modell;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Arrangement {
+public class Arrangement implements Serializable {
 
     private String navnPaaArrangement, sted;
     private LocalDate tidspunktForArrangement;
