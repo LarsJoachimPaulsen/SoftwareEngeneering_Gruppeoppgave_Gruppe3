@@ -3,11 +3,12 @@ package no.hiof.gruppe3.Modell;
 
 // merge bruker og LagNyBruker, heller lage nyBruker som en metode.
 
+import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
-public class Bruker  {
+public class Bruker implements Serializable {
 
     private String etternavn, fornavn, epost, passord, brukernavn;
     private int alder;
