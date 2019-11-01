@@ -1,7 +1,7 @@
 package no.hiof.gruppe3.Modell;
 
 // bytte ut SkrivTilFIl med Arrangement når pris fjernes fra egen fil
-public class Bestilling extends SkrivTilFil {
+public class Bestilling {
 
     private long kortnr;
     private short cvc;
@@ -25,7 +25,7 @@ public class Bestilling extends SkrivTilFil {
             else{
                 antallBilletter -= velgAntallBilleter;
 
-               int pris = kalkulerPris(velgAntallBilleter);
+               //int pris = kalkulerPris(velgAntallBilleter);
 
                 // !!!!! kan flyttes til kalkulerPris? !!!!!!!!!!!!!!!!!!!!!!!!!!!
                 boolean godkjentBetaling = sendTilBankAccept(testBruker, pris);
@@ -56,7 +56,7 @@ public class Bestilling extends SkrivTilFil {
 
     }
 
-    public int kalkulerPris(int antallBilleter) {
+    /*public int kalkulerPris(int antallBilleter) {
 
         int prisPerBillet = Integer.parseInt(lesFraServer("CVC/billettinformasjon.cvc"));
 
@@ -65,7 +65,7 @@ public class Bestilling extends SkrivTilFil {
         return totalPris;
 
 
-    }
+    }*/
 
     private void sendBekreftelse(Bruker bruker) {
 
