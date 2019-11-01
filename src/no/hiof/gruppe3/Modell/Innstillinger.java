@@ -40,6 +40,18 @@ public class Innstillinger extends Bruker {
 
     }
 
+    public void endreBrukernavn(Bruker bruker, String passord, String nyttBrukernavn){
+
+        if (passordSjekk(bruker.getPassord(), passord)){
+
+                bruker.setBrukernavn(nyttBrukernavn);
+        }
+        else{
+            System.out.println("Feil passord");
+        }
+
+    }
+
     private Boolean passordSjekk(String faktiskPassord, String tastetPassord){
 
         boolean passordLikt = false;
