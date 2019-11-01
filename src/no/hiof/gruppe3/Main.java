@@ -1,9 +1,6 @@
 package no.hiof.gruppe3;
 
-import no.hiof.gruppe3.Modell.Arrangement;
-import no.hiof.gruppe3.Modell.Bruker;
-import no.hiof.gruppe3.Modell.Innstillinger;
-import no.hiof.gruppe3.Modell.SkrivTilFil;
+import no.hiof.gruppe3.Modell.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,6 +9,7 @@ public class Main {
 
     private static ArrayList<Bruker> brukerListe = new ArrayList<Bruker>();
     private static ArrayList<Arrangement> arrangementListe = new ArrayList<Arrangement>();
+    private static ArrayList<Klubb> klubbListe = new ArrayList<Klubb>();
 
     public static void main(String[] args){
 
@@ -99,6 +97,20 @@ public class Main {
         new SkrivTilFil("bruker.ser",brukerObjListe);
 
 
+        //*** For å få testet om LesFraFil funker eller ikke kommenter/slett alle arrangementListe.add() og brukeListe.add() oppe.
+
+
+        new LesFraFil("arrangement.ser"); //leser objekter fra arrangement.ser og legger dem i arrangementListe
+        new LesFraFil("bruker.ser"); //leser objekter fra bruker.ser og legger dem i brukerListe.
+
+        // etter at objektene ble lagt til i arrangementListe og brukerListe,
+        // går vi gjennom for å skrive navn på arrangement.
+        for(Arrangement a: arrangementListe){
+            System.out.println(a.getNavnPaaArrangement());
+        }
+        for(Bruker b: brukerListe){
+            System.out.println(b.getFornavn());
+        }
 
 
 
@@ -107,5 +119,7 @@ public class Main {
     public static ArrayList<Bruker> getBrukerListe() { return brukerListe; }
 
     public static ArrayList<Arrangement> getArrangementListe() {return arrangementListe;}
+
+    public static ArrayList<Klubb> getKlubbListe() { return klubbListe; }
 
 }

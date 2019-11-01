@@ -34,8 +34,10 @@ public class LesFraFil {
                     Main.getBrukerListe().add( (Bruker) o);
                 else if (o instanceof Arrangement)
                     Main.getArrangementListe().add( (Arrangement) o);
+                else if(o instanceof Klubb)
+                    Main.getKlubbListe().add( (Klubb) o);
                 else
-                    System.out.println("Objektet er verken Bruker eller Arrangement");
+                    System.out.println("Objektet er verken Bruker, Arrangement eller Klubb");
 
             }
 
@@ -44,10 +46,10 @@ public class LesFraFil {
 
         }catch (FileNotFoundException f){
             System.out.println("Error: filen finnes ikke objektstrøm til filen");
-        } catch (IOException i) {
-            System.out.println("Error: kan ikke åpne ");
-        } catch (ClassNotFoundException e) {
+        }catch (ClassNotFoundException e) {
             System.out.println("Ingen flere objekter å lese");;
+        }catch (IOException i) {
+        System.out.println("Error: feil på objektstrøm ");
         }
 
 
