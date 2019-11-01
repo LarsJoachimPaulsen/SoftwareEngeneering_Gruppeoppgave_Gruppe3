@@ -9,6 +9,7 @@ public class Main {
 
     private static ArrayList<Bruker> brukerListe = new ArrayList<Bruker>();
     private static ArrayList<Arrangement> arrangementListe = new ArrayList<Arrangement>();
+    private static ArrayList<Klubb> klubbListe = new ArrayList<Klubb>();
 
     public static void main(String[] args){
 
@@ -113,12 +114,12 @@ public class Main {
 
 
 
-
-
     }
 
     public static ArrayList<Bruker> getBrukerListe() { return brukerListe; }
 
     public static ArrayList<Arrangement> getArrangementListe() {return arrangementListe;}
+
+    public static ArrayList<Klubb> getKlubbListe() { return klubbListe; }
 
 }
