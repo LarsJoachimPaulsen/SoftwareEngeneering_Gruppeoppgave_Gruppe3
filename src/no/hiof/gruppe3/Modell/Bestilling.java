@@ -1,7 +1,7 @@
 package no.hiof.gruppe3.Modell;
 
 // bytte ut SkrivTilFIl med Arrangement når pris fjernes fra egen fil
-public class Bestilling {
+public abstract class Bestilling extends Arrangement {
 
     private long kortnr;
     private short cvc;
