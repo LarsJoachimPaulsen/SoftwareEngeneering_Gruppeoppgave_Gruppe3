@@ -1,9 +1,10 @@
 package no.hiof.gruppe3;
 
 import no.hiof.gruppe3.Modell.*;
-
+import javax.mail.MessagingException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.mail.internet.*;
 
 public class Main {
 
@@ -11,7 +12,13 @@ public class Main {
     private static ArrayList<Arrangement> arrangementListe = new ArrayList<Arrangement>();
     private static ArrayList<Klubb> klubbListe = new ArrayList<Klubb>();
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws AddressException, MessagingException{
+
+
+        //kaller på sendBekreftelse i main. Det tar litt tid når den kjøres
+        Bestilling bekreftelse = new Bestilling();
+        bekreftelse.sendBekreftelse("setProjectOppgave@gmail.com");
+        System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgt..");
 
 
         System.out.println("Funker");
@@ -37,12 +44,7 @@ public class Main {
 
         //*************demo************//
 
-        Arrangement r = new Arrangement("Løping","Fredrikstad", LocalDate.of(2019,11,10),150,200);
 
-        //Arrangement r1 = new Arrangement("Ski","Fredrikstad", LocalDate.of(2019,10,10),150,200);
-
-        System.out.println(r);
-        //System.out.println(arr1);
 
         //***************** noen arrangementer og brukere for å teste skriving til filen. ***********//
 
