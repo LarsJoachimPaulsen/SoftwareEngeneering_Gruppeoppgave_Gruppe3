@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,17 +9,30 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox prefHeight="200.0" prefWidth="100.0">
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Navn" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stiftet" />
+      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox prefHeight="400.0" prefWidth="267.0">
+               <ImageView fitHeight="163.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets left="10.0" />
+            </VBox.margin>
+         </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Klubbnavn: Klubb">
+            <VBox.margin>
+               <Insets left="30.0" top="10.0" />
+            </VBox.margin></Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stiftet: XXYY">
+            <VBox.margin>
+               <Insets left="30.0" top="15.0" />
+            </VBox.margin></Text>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="400.0" prefWidth="328.0">
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="INFO" />
-                  <Button fx:id="btnMedlemmer" mnemonicParsing="false" text="MEDLEMMER" />
+                  <Button fx:id="btnMedlemmer" mnemonicParsing="false" prefHeight="60.0" prefWidth="138.0" text="MEDLEMMER" />
+         <padding>
+            <Insets left="40.0" />
+         </padding>
             </VBox>
       </HBox>
 </AnchorPane>
