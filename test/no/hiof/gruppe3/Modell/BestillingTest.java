@@ -1,5 +1,6 @@
 package no.hiof.gruppe3.Modell;
 
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -31,15 +32,19 @@ class BestillingTest {
 
     }
 
-
-
     @Test
-    void pris_for_alle_billetter_valgt_er_korrekt_test(){
-
-        assertEquals(400, bestilling.kalkulerPris(2));
-        assertEquals(600, bestilling.kalkulerPris(3));
-        assertEquals(1000, bestilling.kalkulerPris(5));
+    void grensepunkt_med_billetter_test(){
+        bestilling.setAntallBilletter(2);
+        assertNotEquals("Det er desverre tomt for billetter", bestilling.bestillBillet(1));
 
     }
+
+    @Test
+    void bestillinger_av_et_antall_billetter_gir_riktig_pris_test(){
+        assertEquals(200, bestilling.kalkulerPris(1));
+        assertEquals(400, bestilling.kalkulerPris(2));
+        assertEquals(1000, bestilling.kalkulerPris(5));
+    }
+
 
 }
