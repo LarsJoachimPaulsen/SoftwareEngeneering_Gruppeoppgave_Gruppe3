@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="400.0" prefWidth="152.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By" />
             <ChoiceBox prefWidth="150.0" />
@@ -19,17 +19,17 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tid" />
             <ChoiceBox prefWidth="150.0" />
          </children></VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="400.0" prefWidth="231.0">
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrangement" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0Arr" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0Arr" />
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="400.0" prefWidth="142.0">
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sport" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0Ball" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0Ball" />
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="400.0" prefWidth="54.0">
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tid" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" />
