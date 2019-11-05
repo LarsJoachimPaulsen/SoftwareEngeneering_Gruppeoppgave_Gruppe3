@@ -1,6 +1,6 @@
 package no.hiof.gruppe3.Modell;
 
-public abstract class Innstillinger extends Bruker {
+public class Innstillinger extends Bruker {
 
     public void endrePassord(Bruker bruker, String passord, String nyttPassord, String bekreftNyttPassord){
 

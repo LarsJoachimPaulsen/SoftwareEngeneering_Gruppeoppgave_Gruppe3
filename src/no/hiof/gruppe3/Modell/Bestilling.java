@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.Properties;
 
 // bytte ut SkrivTilFIl med Arrangement når pris fjernes fra egen fil
-public abstract class Bestilling extends Arrangement {
+public class Bestilling extends Arrangement {
 
     private long kortnr;
     private short cvc;
@@ -21,7 +21,7 @@ public abstract class Bestilling extends Arrangement {
     private Session getMailSession;
     private MimeMessage generateMailMessage;
 
-    Arrangement arr = new Arrangement("Ski","Fredrikstad", LocalDate.of(2020,11,5),250,150);
+    Arrangement arr = new Arrangement("Ski","Fredrikstad", LocalDate.of(2020,11,5),250,200);
 
     Bruker bruker = new Bruker("abc", "def","acc" ,"setProjectOppgave@gmail.com", "drossap", 27);
 
@@ -69,7 +69,9 @@ public abstract class Bestilling extends Arrangement {
 
     }
 
-    public void sendBekreftelse(String brukerEpost) throws AddressException, MessagingException {
+    public void sendBekreftelse(String brukerEpost){
+
+        try {
 
             //setup Mail Server Properties
             mailServerProperties = System.getProperties();
@@ -95,6 +97,11 @@ public abstract class Bestilling extends Arrangement {
             transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
             transport.close();
         }
+        catch(MessagingException ME){
+            ME.printStackTrace();
+        }
+
+    }
 
 
 
