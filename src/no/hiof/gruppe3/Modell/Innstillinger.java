@@ -52,11 +52,13 @@ public class Innstillinger extends Bruker {
 
     }
 
-    private Boolean passordSjekk(String faktiskPassord, String tastetPassord){
+    public Boolean passordSjekk(String faktiskPassord, String tastetPassord){
 
         boolean passordLikt = false;
 
-        if (tastetPassord.equals(faktiskPassord)){
+        String hashetTastetPassord = MD5Hashing(tastetPassord);
+
+        if (hashetTastetPassord.equals(faktiskPassord)){
             passordLikt = true;
         }
 

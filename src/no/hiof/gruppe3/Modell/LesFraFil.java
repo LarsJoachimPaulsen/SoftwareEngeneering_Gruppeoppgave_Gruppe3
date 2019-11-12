@@ -47,7 +47,7 @@ public class LesFraFil {
         }catch (FileNotFoundException f){
             System.out.println("Error: filen finnes ikke objektstrøm til filen");
         }catch (ClassNotFoundException e) {
-            System.out.println("Ingen flere objekter å lese");;
+            System.out.println("Ingen flere objekter å lese");
         }catch (IOException i) {
         System.out.println("Error: feil på objektstrøm ");
         }

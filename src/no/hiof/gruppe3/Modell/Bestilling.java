@@ -12,9 +12,9 @@ import java.util.Properties;
 // bytte ut SkrivTilFIl med Arrangement når pris fjernes fra egen fil
 public class Bestilling extends Arrangement {
 
-    private long kortnr;
-    private short cvc;
-    private int antallBilletter = 100, pris;
+
+
+    int antallBilletter = 250;
 
     //for å sende en epost.
     private Properties mailServerProperties;
@@ -26,7 +26,7 @@ public class Bestilling extends Arrangement {
     Bruker bruker = new Bruker("abc", "def","acc" ,"setProjectOppgave@gmail.com", "drossap", 27);
 
 
-    public String bestillBillet(int velgAntallBilleter) throws MessagingException {
+    public String bestillBillet(int velgAntallBilleter) {
 
 
         if(antallBilletter > 0){

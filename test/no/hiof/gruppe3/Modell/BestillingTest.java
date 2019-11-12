@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import javax.mail.MessagingException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BestillingTest {
@@ -13,7 +15,8 @@ class BestillingTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 5, 9 })
-    void en_bestilling_skal_gi_tilbakemelding_om_at_den_er_vellykket_test(int antallBilletter){
+    void en_bestilling_skal_gi_tilbakemelding_om_at_den_er_vellykket_test(int antallBilletter)
+    {
         assertEquals("Bestilling vellykket", bestilling.bestillBillet(antallBilletter));
 
     }
