@@ -18,7 +18,7 @@ public class Main {
 
         //kaller på sendBekreftelse i main. Det tar litt tid når den kjøres
         Bestilling bekreftelse = new Bestilling();
-        //bekreftelse.sendBekreftelse("setProjectOppgave@gmail.com");
+        bekreftelse.sendBekreftelse("setProjectOppgave@gmail.com");
         System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgt..");
 
 
