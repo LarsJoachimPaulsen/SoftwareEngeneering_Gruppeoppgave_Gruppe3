@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Arrangement implements Serializable {
+public class Arrangement implements Serializable, Comparable<Arrangement>{
 
     private String navnPaaArrangement, sted;
     private LocalDate tidspunktForArrangement;
@@ -16,15 +16,17 @@ public class Arrangement implements Serializable {
 
     public Arrangement(){};
 
-    public Arrangement(String navnPaaArrangement, String sted, LocalDate tidspunktForArrangement,int antallBilletter
+    public Arrangement(String navnPaaArrangement,Klubb arrangerendeKlubb ,String sted, LocalDate tidspunktForArrangement,int antallBilletter
             , int prisPaaBilletter){
+
         this.navnPaaArrangement = navnPaaArrangement;
+        this.arrangerendeKlubb = arrangerendeKlubb;
         this.sted = sted;
         this.antallBilletter = antallBilletter;
         this.prisPaaBilletter = prisPaaBilletter;
 
         //Kaller på metoden som sjekker om arrangementsdato som settes i konstruktøren er gyldig eller ikke.
-        //hvis datoen er ugyldig, får arrangører en feil medling.
+        //hvis datoen er ugyldig, får arrangører en feilmelding.
 
         setTidspunktForArrangement(tidspunktForArrangement);
     };
@@ -86,8 +88,7 @@ public class Arrangement implements Serializable {
             }
 
 
-
-            public Klubb getArrangerendeKlubb() { return arrangerendeKlubb; }
+    public Klubb getArrangerendeKlubb() { return arrangerendeKlubb; }
 
     public void setArrangerendeKlubb(Klubb arrangerendeKlubb) {
         this.arrangerendeKlubb = arrangerendeKlubb;
@@ -125,11 +126,31 @@ public class Arrangement implements Serializable {
         this.deltakendeBrukereListe = deltakendeBrukereListe;
     }
 
+    @Override
+    public int compareTo(Arrangement arrangement) {
+        return getTidspunktForArrangement().compareTo(arrangement.getTidspunktForArrangement());
+    }
+
+    public String convertToNorsk(){
+
+        String day = tidspunktForArrangement.getDayOfWeek().toString();
+
+        if( day == "MANDAY") day = "Mandag";
+        if( day == "TUESDAY") day = "Tirsdag";
+        if( day == "WEDNESDAY") day = "Onsdag";
+        if( day == "THURSDAY") day = "Tirsdag";
+        if( day == "FRIDAY") day = "Fredag";
+        if( day == "SATURDAY") day = "Lørdag";
+        if( day == "SUNDAY") day = "Søndag";
+
+        return day;
+    }
+
 
     @Override
     public String toString(){
 
-        return navnPaaArrangement+" vil bli arrangert i "+sted+" på "+tidspunktForArrangement.getDayOfWeek()
+        return navnPaaArrangement+" vil bli arrangert i "+sted+" på "+convertToNorsk()
                 + " \""+tidspunktForArrangement.getDayOfMonth() +"-"+tidspunktForArrangement.getMonth()
                 +"-"+tidspunktForArrangement.getYear()+" pris per billett: "+ prisPaaBilletter+"kr\n";
     }
