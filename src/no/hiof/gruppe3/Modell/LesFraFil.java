@@ -49,7 +49,7 @@ public class LesFraFil {
         }catch (ClassNotFoundException e) {
             System.out.println("Ingen flere objekter å lese");
         }catch (IOException i) {
-        System.out.println("Error: feil på objektstrøm ");
+        System.out.println(".........");
         }
 
 

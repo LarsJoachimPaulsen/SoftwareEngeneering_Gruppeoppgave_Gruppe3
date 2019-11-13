@@ -13,8 +13,7 @@ public class Bruker implements Serializable {
     private String etternavn, fornavn, epost, passord, brukernavn;
     private int alder;
     private long telefonnummer;
-    private boolean brukerErKlubb;
-    private ArrayList<Arrangement> arrangementerBrukerSkalPaa;
+    private ArrayList<Arrangement> arrangementerBrukerSkalPaa = new ArrayList<Arrangement>();
 
     // telefonnummer må legges inn i konstruktør
     public Bruker(String brukernavn, String fornavn, String etternavn, String epost, String passord, int alder){
@@ -26,9 +25,7 @@ public class Bruker implements Serializable {
         this.alder = alder;
     }
 
-    public Bruker(){
-
-    }
+    public Bruker(){}
 
 
     // produserer en MD5Has av passordet.
@@ -124,6 +121,17 @@ public class Bruker implements Serializable {
 
     public ArrayList<Arrangement> getArrangementerBrukerSkalPaa() {
         return arrangementerBrukerSkalPaa;
+    }
+
+
+    //metoden returnerer navn på arrangementer brukeren skal på.
+    public ArrayList<String> getArrangementNavnPaaArrangementerBrukerSkalPaa(ArrayList<Arrangement> arrangementerBrukerSkalPaa){
+        ArrayList<String> liste = new ArrayList<String>();
+
+        for(Arrangement r : arrangementerBrukerSkalPaa){
+            liste.add(r.getNavnPaaArrangement());
+        }
+        return liste;
     }
 
     public void setArrangementerBrukerSkalPaa(ArrayList<Arrangement> arrangementerBrukerSkalPaa) {
