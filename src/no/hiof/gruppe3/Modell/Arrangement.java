@@ -11,8 +11,8 @@ public class Arrangement implements Serializable {
     private LocalDate tidspunktForArrangement;
     private Klubb arrangerendeKlubb;
     private int antallBilletter = 100, prisPaaBilletter = 200;
-    private ArrayList<Klubb> deltakendeKlubberListe = new ArrayList<Klubb>();
-    private ArrayList<Bruker> deltakendeBrukereListe = new ArrayList<Bruker>();
+    private ArrayList<Klubb> deltakendeKlubberListe = new ArrayList<>();
+    private ArrayList<Bruker> deltakendeBrukereListe = new ArrayList<>();
 
     public Arrangement(){};
 
@@ -29,6 +29,24 @@ public class Arrangement implements Serializable {
         setTidspunktForArrangement(tidspunktForArrangement);
     };
 
+
+    public void leggTilDeltakerIListe(Bruker bruker){
+
+        deltakendeBrukereListe.add(bruker);
+    }
+
+    public void leggTilDeltakendeKlubber(Klubb klubb){
+        deltakendeKlubberListe.add(klubb);
+    }
+
+    public void leggTilFlereDeltakere(ArrayList<Bruker> listeMedBrukere){
+
+        for(int i = 0; i<listeMedBrukere.size(); i++){
+
+            leggTilDeltakerIListe(listeMedBrukere.get(i));
+        }
+
+    }
 
     public String getNavnPaaArrangement() {
         return navnPaaArrangement;
