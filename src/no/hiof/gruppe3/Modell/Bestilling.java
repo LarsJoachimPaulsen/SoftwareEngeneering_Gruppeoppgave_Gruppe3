@@ -21,7 +21,9 @@ public class Bestilling extends Arrangement {
     private Session getMailSession;
     private MimeMessage generateMailMessage;
 
-    Arrangement arr = new Arrangement("Ski","Fredrikstad", LocalDate.of(2020,11,5),250,200);
+    Klubb fredrikstadKlubb = new Klubb("Fredrikstad Klubb","Fredrikstad sentrum",16000);
+
+    Arrangement arr = new Arrangement("Ski",fredrikstadKlubb,"Fredrikstad", LocalDate.of(2020,11,5),250,200);
 
     Bruker bruker = new Bruker("abc", "def","acc" ,"setProjectOppgave@gmail.com", "drossap", 27);
 
