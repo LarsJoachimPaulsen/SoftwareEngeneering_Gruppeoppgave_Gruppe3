@@ -146,6 +146,18 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
         this.antallDeltakere = antallDeltakere;
     }
 
+
+    public ArrayList<Arrangement> arrangementerDenSøkteKlubbenSkalArrangere(ArrayList<Arrangement> arr, String klubbNavn){
+
+        ArrayList<Arrangement> arrangementliste = new ArrayList<>();
+
+        for(Arrangement r : arr){
+            if(r.getArrangerendeKlubb().getNavn() == klubbNavn) arrangementliste.add(r);
+        }
+
+        return arrangementliste;
+    }
+
     @Override
     public int compareTo(Arrangement arrangement) {
         return getTidspunktForArrangement().compareTo(arrangement.getTidspunktForArrangement());
