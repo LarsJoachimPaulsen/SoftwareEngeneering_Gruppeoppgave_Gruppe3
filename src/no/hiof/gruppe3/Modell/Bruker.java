@@ -138,5 +138,12 @@ public class Bruker implements Serializable {
         this.arrangementerBrukerSkalPaa = arrangementerBrukerSkalPaa;
     }
 
+
+    // override av toString for enklere testing i konsoll
+    @Override
+    public String toString(){
+        return brukernavn;
+    }
+
 }
 

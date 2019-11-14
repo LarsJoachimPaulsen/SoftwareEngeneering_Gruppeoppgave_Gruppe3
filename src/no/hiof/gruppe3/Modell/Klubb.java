@@ -11,7 +11,7 @@ public class Klubb implements Serializable {
 
     //Muligheter for flere kontakpersoner, en liste her istedenfor?
     private Bruker kontaktperson;
-    private ArrayList<Bruker> brukerliste = new ArrayList<Bruker>();
+    private ArrayList<Bruker> medlemmer = new ArrayList<Bruker>();
     private ArrayList<String> sportsliste = new ArrayList<String>();
 
     public Klubb(){};
@@ -30,7 +30,7 @@ public class Klubb implements Serializable {
 
     public void leggTilBruker(Bruker nyBruker){
 
-        brukerliste.add(nyBruker);
+        medlemmer.add(nyBruker);
 
     }
 
@@ -51,7 +51,7 @@ public class Klubb implements Serializable {
 
     public int getPostnummer() { return postnummer; }
 
-    public ArrayList<Bruker> getKlubbmedlemmer() { return klubbmedlemmer; }
+    public ArrayList<Bruker> getMedlemmer() { return medlemmer; }
 
     public Bruker getKontaktperson() { return kontaktperson; }
 

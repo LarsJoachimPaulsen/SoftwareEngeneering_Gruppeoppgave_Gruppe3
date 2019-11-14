@@ -10,31 +10,38 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
     private String navnPaaArrangement, sted;
     private LocalDate tidspunktForArrangement;
     private Klubb arrangerendeKlubb;
-    private int antallBilletter = 100, prisPaaBilletter = 200;
+    private int antallBilletter, prisPaaBilletter, antallDeltakere;
     private ArrayList<Klubb> deltakendeKlubberListe = new ArrayList<>();
     private ArrayList<Bruker> deltakendeBrukereListe = new ArrayList<>();
 
     public Arrangement(){};
 
     public Arrangement(String navnPaaArrangement,Klubb arrangerendeKlubb ,String sted, LocalDate tidspunktForArrangement,int antallBilletter
-            , int prisPaaBilletter){
+            , int prisPaaBilletter, int antallDeltakere){
 
         this.navnPaaArrangement = navnPaaArrangement;
         this.arrangerendeKlubb = arrangerendeKlubb;
         this.sted = sted;
         this.antallBilletter = antallBilletter;
         this.prisPaaBilletter = prisPaaBilletter;
+        this.antallDeltakere = antallDeltakere;
 
         //Kaller på metoden som sjekker om arrangementsdato som settes i konstruktøren er gyldig eller ikke.
         //hvis datoen er ugyldig, får arrangører en feilmelding.
 
         setTidspunktForArrangement(tidspunktForArrangement);
-    };
+    }
 
 
     public void leggTilDeltakerIListe(Bruker bruker){
 
-        deltakendeBrukereListe.add(bruker);
+        if(antallDeltakere > 0){
+            deltakendeBrukereListe.add(bruker);
+            antallDeltakere--;
+        }
+        else{
+            System.out.println("Det er ikke nok plass");
+        }
     }
 
     public void leggTilDeltakendeKlubber(Klubb klubb){
@@ -43,9 +50,14 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
 
     public void leggTilFlereDeltakere(ArrayList<Bruker> listeMedBrukere){
 
-        for(int i = 0; i<listeMedBrukere.size(); i++){
+        if(antallDeltakere > listeMedBrukere.size()) {
+            for (int i = 0; i < listeMedBrukere.size(); i++) {
 
-            leggTilDeltakerIListe(listeMedBrukere.get(i));
+                leggTilDeltakerIListe(listeMedBrukere.get(i));
+            }
+        }
+        else{
+            System.out.println("Det er ikke nok plass til alle brukerne");
         }
 
     }
@@ -114,6 +126,10 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
         return deltakendeKlubberListe;
     }
 
+    public int getAntallDeltakere() {
+        return antallDeltakere;
+    }
+
     public void setDeltakendeKlubberListe(ArrayList<Klubb> deltakendeKlubberListe) {
         this.deltakendeKlubberListe = deltakendeKlubberListe;
     }
@@ -126,6 +142,10 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
         this.deltakendeBrukereListe = deltakendeBrukereListe;
     }
 
+    public void setAntallDeltakere(int antallDeltakere) {
+        this.antallDeltakere = antallDeltakere;
+    }
+
     @Override
     public int compareTo(Arrangement arrangement) {
         return getTidspunktForArrangement().compareTo(arrangement.getTidspunktForArrangement());
@@ -135,13 +155,13 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
 
         String day = tidspunktForArrangement.getDayOfWeek().toString();
 
-        if( day == "MANDAY") day = "Mandag";
-        if( day == "TUESDAY") day = "Tirsdag";
-        if( day == "WEDNESDAY") day = "Onsdag";
-        if( day == "THURSDAY") day = "Tirsdag";
-        if( day == "FRIDAY") day = "Fredag";
-        if( day == "SATURDAY") day = "Lørdag";
-        if( day == "SUNDAY") day = "Søndag";
+        if( day.equals("MONDAY")) day = "Mandag";
+        if( day.equals("TUESDAY")) day = "Tirsdag";
+        if( day.equals("WEDNESDAY")) day = "Onsdag";
+        if( day.equals("THURSDAY")) day = "Tirsdag";
+        if( day.equals("FRIDAY")) day = "Fredag";
+        if( day.equals("SATURDAY")) day = "Lørdag";
+        if( day.equals("SUNDAY")) day = "Søndag";
 
         return day;
     }

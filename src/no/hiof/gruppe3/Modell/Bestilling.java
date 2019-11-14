@@ -23,7 +23,7 @@ public class Bestilling extends Arrangement {
 
     Klubb fredrikstadKlubb = new Klubb("Fredrikstad Klubb","Fredrikstad sentrum",16000);
 
-    Arrangement arr = new Arrangement("Ski",fredrikstadKlubb,"Fredrikstad", LocalDate.of(2020,11,5),250,200);
+    Arrangement arr = new Arrangement("Ski",fredrikstadKlubb,"Fredrikstad", LocalDate.of(2020,11,5),250,200, 100);
 
     Bruker bruker = new Bruker("abc", "def","acc" ,"setProjectOppgave@gmail.com", "drossap", 27);
 
