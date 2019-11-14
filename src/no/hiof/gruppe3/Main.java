@@ -60,7 +60,7 @@ public class Main {
         Arrangement sykkelritt = new Arrangement("sykkelritt", haldenKlubb, "Halden", LocalDate.of(2019, 12, 27), 200, 170, 100);
         Arrangement skirenn = new Arrangement("skirenn", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 11, 10), 150, 100, 100);
         Arrangement løp = new Arrangement("løp", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 12, 9), 370, 100, 100);
-        Arrangement riding = new Arrangement("riding", fredrikstadKlubb, "Moss", LocalDate.of(2020, 10, 04), 370, 100, 100);
+        Arrangement riding = new Arrangement("riding", mossKlubb, "Moss", LocalDate.of(2020, 10, 04), 370, 100, 100);
         Arrangement roing = new Arrangement("roing", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 10, 11), 370, 100, 100);
         Arrangement adventureRacing = new Arrangement("Adventure Racing", mossKlubb, "Moss", LocalDate.of(2020, 9, 5), 275, 200, 100);
 
@@ -103,6 +103,7 @@ public class Main {
 
         System.out.println("***** Klubber som registrert seg i systemet *****");
         System.out.println("");
+
         //lager en tom arrayListe av Objekter som blir fylt med objekter fra klubbListe.
         //viktig å merke at listene inneholder objekter og ikke brukere.
         ArrayList<Object> klubbObjListe = new ArrayList<>();
@@ -182,6 +183,14 @@ public class Main {
         }
 
         System.out.println("**********************************");
+
+        System.out.println("***** Brukeren kan søke etter klubb *****");
+
+        Arrangement r = new Arrangement();
+        System.out.println(r.arrangementerDenSøkteKlubbenSkalArrangere(arrangementListe,"Fredrikstad Klubb"));
+
+        System.out.println("**********************************");
+
 
         for (Bruker b : brukerListe) {
             System.out.println(b.getFornavn() + " skal på" + b.getArrangementNavnPaaArrangementerBrukerSkalPaa(b.getArrangementerBrukerSkalPaa()));
