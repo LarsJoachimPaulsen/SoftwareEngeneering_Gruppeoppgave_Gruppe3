@@ -1,8 +1,5 @@
 package no.hiof.gruppe3.Modell;
 
-
-// merge bruker og LagNyBruker, heller lage nyBruker som en metode.
-
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
