@@ -3,9 +3,7 @@ package no.hiof.gruppe3.Modell;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrangementTest {
@@ -48,6 +46,21 @@ class ArrangementTest {
         arr.setTidspunktForArrangement(LocalDate.of(2020,11,5));
         assertNotEquals(null,arr.getTidspunktForArrangement());
     }
+
+    @DisplayName("sjekker om arrangementene som returneres fra rrangementListe når brukeren søker etter Moss Klubb er lik expectedList")
+    @Test
+    void testOmMetodenReturnererArrangementListeAvArrangementerEnSøktKlubbArrangerer(){
+        ArrayList <Arrangement> expectedList = new ArrayList<>();
+        expectedList.add(new Arrangement("riding",mossKlubb,"Moss",LocalDate.of(2020,10,04),370,250));
+        expectedList.add(new Arrangement("Adventure Racing",mossKlubb,"Moss",LocalDate.of(2020,9,5),275,200));
+
+        Main m = new Main();
+        ArrayList <Arrangement> actualList = arr.arrangementerDenSøkteKlubbenSkalArrangere(m.getArrangementListe(), "Moss Klubb");
+        assertEquals(expectedList,actualList);
+
+    }
+
+
 
 
 
