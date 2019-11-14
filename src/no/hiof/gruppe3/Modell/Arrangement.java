@@ -134,7 +134,7 @@ public class Arrangement implements Serializable, Comparable<Arrangement>{
         this.deltakendeKlubberListe = deltakendeKlubberListe;
     }
 
-    public ArrayList<Bruker> getDeltakendeBrukereListe() {
+    public ArrayList<Bruker> getDeltakendeBrukerListe() {
         return deltakendeBrukereListe;
     }
 

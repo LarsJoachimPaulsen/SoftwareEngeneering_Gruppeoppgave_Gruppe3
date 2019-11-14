@@ -2,7 +2,6 @@ package no.hiof.gruppe3;
 
 import no.hiof.gruppe3.Modell.*;
 import javax.mail.MessagingException;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +19,7 @@ public class Main {
         //kaller på sendBekreftelse i main. Det tar litt tid når den kjøres
         Bestilling bekreftelse = new Bestilling();
         bekreftelse.sendBekreftelse("setProjectOppgave@gmail.com");
-        System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgt..");
+        System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgte..");
 
 
         System.out.println("Funker");
@@ -104,7 +103,7 @@ public class Main {
 
         System.out.println("***** Klubber som registrert seg i systemet *****");
         System.out.println("");
-        //lager en tøm arrayListe av Objekter som blir fylt med objekter fra klubbListe.
+        //lager en tom arrayListe av Objekter som blir fylt med objekter fra klubbListe.
         //viktig å merke at listene inneholder objekter og ikke brukere.
         ArrayList<Object> klubbObjListe = new ArrayList<>();
         for (Klubb k : klubbListe) {
@@ -121,12 +120,12 @@ public class Main {
         ArrayList<Object> arrangementObjListe = new ArrayList<Object>();
         for (Arrangement arr : arrangementListe) {
             arrangementObjListe.add(arr);
-            System.out.println(arr.getNavnPaaArrangement() + " skal bli arrangert av " + arr.getArrangerendeKlubb() + "\n");
+            System.out.println(arr.getNavnPaaArrangement() + " arrangeres av " + arr.getArrangerendeKlubb() + "\n");
         }
 
         System.out.println("**********************************");
 
-        System.out.println("***** Brukere som registrert seg i systemet *****");
+        System.out.println("***** Brukere som har registrert seg i systemet *****");
         System.out.println("");
         //lager en tøm arrayListe av Objekter som blir fylt med objekter fra brukerListe.
         //viktig å merke at listene inneholder objekter og ikke brukere.
@@ -214,9 +213,9 @@ public class Main {
 
         System.out.println(testArrangement.toString());
 
-        for (int i = 0; i<testArrangement.getDeltakendeBrukereListe().size(); i++){
+        for (int i = 0; i<testArrangement.getDeltakendeBrukerListe().size(); i++){
 
-            System.out.println(testArrangement.getDeltakendeBrukereListe().get(i).toString());
+            System.out.println(testArrangement.getDeltakendeBrukerListe().get(i).toString());
         }
 
         System.out.println("*******************************************");
