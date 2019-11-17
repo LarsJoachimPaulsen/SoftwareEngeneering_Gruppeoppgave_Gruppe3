@@ -34,6 +34,19 @@ public class Klubb implements Serializable {
 
     }
 
+    public void slettArrangement(ArrayList<Arrangement> arrangementList, String arrangementNavn){
+
+
+
+        for(int i = 0; i < arrangementList.size(); i++){
+            Arrangement r = arrangementList.get(i);
+            if(r.getNavnPaaArrangement() == arrangementNavn){
+                arrangementList.remove(i);
+            }
+        }
+        System.out.println("Arrangement "+ arrangementNavn+" er slettet");
+    }
+
 
     public void setNavn(String navn) { this.navn = navn; }
 

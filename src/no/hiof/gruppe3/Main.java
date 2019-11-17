@@ -17,9 +17,9 @@ public class Main {
     public static void main(String[] args) throws AddressException, MessagingException {
 
         //kaller på sendBekreftelse i main. Det tar litt tid når den kjøres
-        Bestilling bekreftelse = new Bestilling();
+       /* Bestilling bekreftelse = new Bestilling();
         bekreftelse.sendBekreftelse("setProjectOppgave@gmail.com");
-        System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgte..");
+        System.out.println(" ===> Orderebekreftelsen har blitt sendt til eposten du valgte..");*/
 
 
         System.out.println("Funker");
@@ -57,13 +57,13 @@ public class Main {
         klubbListe.add(mossKlubb);
 
         //legger til noen arrangementer til arrangementListe som ligger helt øverst i Main klasse.
-        Arrangement sykkelritt = new Arrangement("sykkelritt", haldenKlubb, "Halden", LocalDate.of(2019, 12, 27), 200, 170, 100);
-        Arrangement skirenn = new Arrangement("skirenn", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 11, 10), 150, 100, 100);
-        Arrangement løp = new Arrangement("løp", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 12, 9), 370, 100, 100);
-        Arrangement riding = new Arrangement("riding", mossKlubb, "Moss", LocalDate.of(2020, 10, 04), 370, 100, 100);
-        Arrangement roing = new Arrangement("roing", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 10, 11), 370, 100, 100);
-        Arrangement adventureRacing = new Arrangement("Adventure Racing", mossKlubb, "Moss", LocalDate.of(2020, 9, 5), 275, 200, 100);
-
+        Arrangement sykkelritt = new Arrangement("sykkelritt", haldenKlubb, "Halden", LocalDate.of(2019, 12, 27), 200, 170, 200);
+        Arrangement skirenn = new Arrangement("skirenn", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 11, 10), 150, 100, 150);
+        Arrangement løp = new Arrangement("løp", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 12, 9), 370, 100, 370);
+        Arrangement riding = new Arrangement("riding", mossKlubb, "Moss", LocalDate.of(2020, 10, 04), 160, 100, 160);
+        Arrangement roing = new Arrangement("roing", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 10, 11), 270, 100, 270);
+        Arrangement adventureRacing = new Arrangement("Adventure Racing", mossKlubb, "Moss", LocalDate.of(2020, 9, 5), 275, 200, 2750);
+        Arrangement arrDemo = new Arrangement("arr Demo",haldenKlubb,"Halden",LocalDate.of(2020,05,13),70,130,70);
         //lager noen bruker på den måten istenden for brukerListe.add(new Bruker) for å kunne bruke bruker navn til å legge til arrangementer.
         Bruker jon = new Bruker("AAA", "Jon", "Antonsen", "setProjectOppgave@gmail.com", "12345", 28);
         Bruker kent = new Bruker("MMM", "Kent", "Østby", "setProjectOppgave@gmail.com", "9870", 32);
@@ -76,6 +76,7 @@ public class Main {
         arrangementListe.add(riding);
         arrangementListe.add(roing);
         arrangementListe.add(adventureRacing);
+        arrangementListe.add(arrDemo);
 
 
         //bruker jon skal ha 2 arrangementer som han skal på.
@@ -190,6 +191,15 @@ public class Main {
         System.out.println(r.arrangementerDenSøkteKlubbenSkalArrangere(arrangementListe,"Fredrikstad Klubb"));
 
         System.out.println("**********************************");
+
+        System.out.println("***** Klubben kan slette en arrangement *****");
+
+        Klubb k = new Klubb();
+        k.slettArrangement(arrangementListe,"arr Demo");
+        System.out.println(arrangementListe);
+
+        System.out.println("**********************************");
+
 
 
         for (Bruker b : brukerListe) {
