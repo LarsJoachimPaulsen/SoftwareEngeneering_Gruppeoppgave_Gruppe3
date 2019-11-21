@@ -22,7 +22,7 @@ class BestillingTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {101, 103, 109, 134})
+    @ValueSource(ints = {400, 403, 409, 434})
     void en_bestilling_skal_si_ifra_om_det_ikke_er_nok_billetter_test(int antallBilleter){
         assertEquals("Det finnes desverre ikke nok billetter", bestilling.bestillBillet(antallBilleter));
     }
