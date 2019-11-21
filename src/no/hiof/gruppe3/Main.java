@@ -64,6 +64,7 @@ public class Main {
         Arrangement roing = new Arrangement("roing", fredrikstadKlubb, "Fredrikstad", LocalDate.of(2020, 10, 11), 270, 100, 270);
         Arrangement adventureRacing = new Arrangement("Adventure Racing", mossKlubb, "Moss", LocalDate.of(2020, 9, 5), 275, 200, 2750);
         Arrangement arrDemo = new Arrangement("arr Demo",haldenKlubb,"Halden",LocalDate.of(2020,05,13),70,130,70);
+
         //lager noen bruker på den måten istenden for brukerListe.add(new Bruker) for å kunne bruke bruker navn til å legge til arrangementer.
         Bruker jon = new Bruker("AAA", "Jon", "Antonsen", "setProjectOppgave@gmail.com", "12345", 28);
         Bruker kent = new Bruker("MMM", "Kent", "Østby", "setProjectOppgave@gmail.com", "9870", 32);

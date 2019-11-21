@@ -15,6 +15,11 @@ public class Klubb implements Serializable {
     private ArrayList<String> sportsliste = new ArrayList<String>();
 
     public Klubb(){};
+
+    public Klubb(String navn) {
+        this.navn = navn;
+    }
+
     public Klubb(String navn, String addresse, int postnummer){
         this.navn = navn;
         this.addresse = addresse;
